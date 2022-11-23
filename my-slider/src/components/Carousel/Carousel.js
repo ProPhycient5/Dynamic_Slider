@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./carousel.css";
 
 const Carousel = (props) => {
-  const { children } = props;
+  const { children, show } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(children.length);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -50,8 +50,10 @@ const Carousel = (props) => {
           onTouchMove={handleTouchMove}
         >
           <div
-            className="carousel-content"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            className={`carousel-content show-${show}`}
+            style={{
+              transform: `translateX(-${currentIndex * (100 / show)}%)`,
+            }}
           >
             {children}
           </div>
