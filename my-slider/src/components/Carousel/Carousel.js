@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./carousel.css";
 
 const Carousel = (props) => {
+  //show is meant for showing multiple images/items.
   const { children, show } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(children.length);
