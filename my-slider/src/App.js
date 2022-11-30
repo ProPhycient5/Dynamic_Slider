@@ -12,6 +12,7 @@ const App = () => {
     >
       <Carousel
       show={3}
+      infiniteLoop={true}
       >
         <div>
           <div style={{ padding: 8 }}>
